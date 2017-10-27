@@ -175,9 +175,13 @@ namespace GeetestSDK
             return validateResult;
         }
 
-        private Boolean requestIsLegal(String challenge, String validate, String seccode)
+        private bool requestIsLegal(string challenge, string validate, string seccode)
         {
-            if (challenge.Equals(string.Empty) || validate.Equals(string.Empty) || seccode.Equals(string.Empty)) return false;
+            if(string.IsNullOrEmpty(challenge) || string.IsNullOrEmpty(validate) || string.IsNullOrEmpty(seccode))
+            {
+                return false;
+            }
+
             return true;
         }
 
